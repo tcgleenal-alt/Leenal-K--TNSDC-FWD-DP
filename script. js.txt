@@ -1,25 +1,23 @@
-// Greeting based on time
-const greetingElement = document.getElementById("greeting");
-
-const hours = new Date().getHours();
-let greetingText = "";
-
-if (hours < 12) {
-  greetingText = "Good Morning 🌞";
-} else if (hours < 18) {
-  greetingText = "Good Afternoon ☀️";
-} else {
-  greetingText = "Good Evening 🌙";
+// Function to update student details dynamically
+function updateDetails() {
+  document.getElementById("name").innerText = "Karthick Shelby";
+  document.getElementById("age").innerText = "21";
+  document.getElementById("course").innerText = "BCA";
+  document.getElementById("college").innerText = "SNMV College, Coimbatore";
+  document.getElementById("skills").innerText = "HTML, CSS, JavaScript, Python";
+  document.getElementById("studentName").innerText = "Karthick Shelby";
+  alert("Student details updated!");
 }
 
-greetingElement.textContent = `${greetingText}, I’m Karthick!`;
+// Function to validate contact form
+function validateForm() {
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
 
-// Smooth scroll effect
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
+  if (email === "" || message === "") {
+    alert("Please fill in all fields!");
+    return false;
+  }
+  alert("Message sent successfully!");
+  return true;
+}
